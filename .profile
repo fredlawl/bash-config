@@ -17,11 +17,6 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 export TERM='screen-256color'
-eval `dircolors ~/.dir_colors`
-
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-
 export EDITOR='vim'
 
 # set PATH so it includes user's private bin directories

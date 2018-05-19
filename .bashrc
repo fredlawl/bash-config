@@ -118,4 +118,8 @@ fi
 
 if [ ! -z "$TERMCAP" ] && [ "$TERM" == "screen" ]; then                         
     export TERMCAP=$(echo $TERMCAP | sed -e 's/Co#8/Co#256/g')                  
+fi
+
+if [ -f ~/.inputrc ]; then
+	bind -f ~/.inputrc
 fi 
