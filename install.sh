@@ -7,6 +7,10 @@ $(mkdir -p "$HOME/.tmux/plugins" &>/dev/null)
 $(cp -r "$DIR/.tmux/plugins/tpm" "$HOME/.tmux/plugins" &>/dev/null)
 echo "Installed tmux plugins. Don't forget to run tmux and ctrl + b + I"
 
+$(wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash &>/dev/null)
+$(mv "$DIR/git-completion.bash" "$HOME/.git-completion.bash" &>/dev/null)
+echo "Downloaded git-completion.bash"
+
 # NOTE: Don't forget to open up tmux and type
 # ctrl + b + I
 
