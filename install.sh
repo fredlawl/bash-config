@@ -2,9 +2,9 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-$(cd "$DIR" && git submodule update --init --recursive)
-$(mkdir -p "$HOME/.tmux/plugins")
-$(cp -r "$DIR/.tmux/plugins/tpm" "$HOME/.tmux/plugins")
+$(cd "$DIR" && git submodule update --init --recursive &>/dev/null)
+$(mkdir -p "$HOME/.tmux/plugins" &>/dev/null)
+$(cp -r "$DIR/.tmux/plugins/tpm" "$HOME/.tmux/plugins" &>/dev/null)
 echo "Installed tmux plugins. Don't forget to run tmux and ctrl + b + I"
 
 # NOTE: Don't forget to open up tmux and type
@@ -17,6 +17,10 @@ for FILE in $DIR/.*; do
     [ ! "$FILENAME" == ".gitmodules" ] || continue
 
     echo "Linking $FILENAME"
-    $(mv "$HOME/$FILENAME" "$HOME/$FILENAME.bak")
-    $(ln -s "$DIR/$FILENAME" "$HOME/$FILENAME")
+    if [[ ! -e "$HOME/$FILENAME.bak" ]]
+    then
+        $(mv "$HOME/$FILENAME" "$HOME/$FILENAME.bak" &>/dev/null)
+    fi
+
+    $(ln -s "$DIR/$FILENAME" "$HOME/$FILENAME" &>/dev/null)
 done
