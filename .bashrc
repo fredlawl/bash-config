@@ -76,10 +76,12 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-    alias ls="ls --color=auto"
+    alias ls="ls -al --color=auto"
 else
     export CLICOLOR=1
     export LSCOLORS=exfxfeaeBxxehehbadacea
+
+    alias ls="ls -al"
 fi
 
 #alias dir='dir --color=auto'
@@ -96,7 +98,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls='ls -al'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
