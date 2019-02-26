@@ -9,7 +9,7 @@ alias sourcea='source ~/.profile'
 alias testpatchsend='(cd ~/Linux/Patches/Outgoing && git send-email --no-signed-off-by-cc --no-cc-cover --no-chain-reply-to --to=fred@fredlawl.com ./00*.patch)'
 
 alias build="make -j5"
-alias install="make -j5 && sudo make install && sudo update-grub"
+alias install="make -j5 && sudo make modules_install && sudo make install && sudo update-grub"
 
 alias cdpci="cd ~/Projects/pci/drivers/pci"
 alias cdlinux="cd ~/Projects/pci"
