@@ -6,7 +6,7 @@ alias tmux="tmux -2"
 alias cgrep='grep -nEi -d skip --color=always --include=\*.{h,c}'
 alias edita='vim ~/.bash_aliases'
 alias sourcea='source ~/.profile'
-alias testpatchsend='(cd ~/Linux/Patches/Outgoing && git send-email --no-signed-off-by-cc --no-cc-cover --no-chain-reply-to --to=fred@fredlawl.com ./00*.patch)'
+alias testpatchsend='(cd ~/Linux/Patches/Outgoing && git send-email --supress-cc=all --no-signed-off-by-cc --no-cc-cover --no-chain-reply-to --to=fred@fredlawl.com ./00*.patch)'
 
 alias build="make -j5"
 alias install="make -j5 && sudo make modules_install && sudo make install && sudo update-grub"
