@@ -18,4 +18,4 @@ alias cdlinux="cd ~/Projects/pci"
 # builds backups whenever you run patchseries so that if you ever
 # edited patches, that the old backup remains incase you fucked it up.
 # this is just something to consider :)
-alias patchseries='(rm ~/Linux/Patches/Outgoing/*.patch 2>/dev/null; git format-patch -b -M100% -o ~/Linux/Patches/Outgoing --cover-letter -n master..HEAD)'
+alias patchseries='(rm ~/Linux/Patches/Outgoing/*.patch 2>/dev/null; git format-patch -o ~/Linux/Patches/Outgoing --cover-letter -n master..HEAD)'
